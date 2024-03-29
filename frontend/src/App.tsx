@@ -5,6 +5,7 @@ import SignIn from "./pages/sign-in"
 import AddHotel from "./pages/add-hotel"
 import { useAppContext } from "./context/app-context"
 import MyHotels from "./pages/my-hotels"
+import EditHotel from "./pages/edit-hotel"
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
             <>
               <Route path="/add-hotel" element={<Layout><AddHotel/></Layout>}/>
               <Route path="/my-hotels" element={<Layout><MyHotels/></Layout>}/>
+              <Route path="/edit-hotel/:hotelId" element={<Layout><EditHotel/></Layout>}/>
             </>
           )}
         <Route path="*" element={<Navigate to="/"/>}/>
