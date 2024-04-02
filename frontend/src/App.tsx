@@ -10,6 +10,7 @@ import Search from "./pages/search"
 import HotelDetails from "./pages/hotel-details"
 import Booking from "./pages/booking"
 import MyBookings from "./pages/my-bookings"
+import Home from "./pages/home"
 
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout showSearchBar><p>Home Page</p></Layout>}/>
+        <Route path="/" element={<Layout showSearchBar><Home/></Layout>}/>
         <Route path="/search" element={<Layout showSearchBar><Search/></Layout>}/>
         <Route path="/register" element={<Layout showSearchBar><Register/></Layout>}/>
         <Route path="/sign-in" element={<Layout showSearchBar><SignIn/></Layout>}/>
