@@ -35,7 +35,7 @@ const SearchResultCard = ({ hotel }: Props) => {
         <div className="grid grid-cols-2 items-end whitespace-nowrap">
           <div className="flex gap-1 items-center">
             {hotel.facilities.slice(0, 3).map((facility) => (
-              <span className="bg-slate-300 p-2 rounded-lg font-bold text-xs whitespace-nowrap">
+              <span className="bg-slate-300 p-2 rounded-lg font-bold text-xs whitespace-nowrap" key={facility}>
                 {facility}
               </span>
             ))}

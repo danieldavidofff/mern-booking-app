@@ -8,6 +8,7 @@ import MyHotels from "./pages/my-hotels"
 import EditHotel from "./pages/edit-hotel"
 import Search from "./pages/search"
 import HotelDetails from "./pages/hotel-details"
+import Booking from "./pages/booking"
 
 
 const App = () => {
@@ -16,14 +17,15 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout><p>Home Page</p></Layout>}/>
-        <Route path="/search" element={<Layout><Search/></Layout>}/>
-        <Route path="/register" element={<Layout><Register/></Layout>}/>
-        <Route path="/sign-in" element={<Layout><SignIn/></Layout>}/>
+        <Route path="/" element={<Layout showSearchBar><p>Home Page</p></Layout>}/>
+        <Route path="/search" element={<Layout showSearchBar><Search/></Layout>}/>
+        <Route path="/register" element={<Layout showSearchBar><Register/></Layout>}/>
+        <Route path="/sign-in" element={<Layout showSearchBar><SignIn/></Layout>}/>
         <Route path="/detail/:hotelId" element={<Layout><HotelDetails/></Layout>}/>
         
           {isLoggedIn && (
             <>
+              <Route path="/hotel/:hotelId/booking" element={<Layout showSearchBar={false}><Booking/></Layout>}/>
               <Route path="/add-hotel" element={<Layout><AddHotel/></Layout>}/>
               <Route path="/my-hotels" element={<Layout><MyHotels/></Layout>}/>
               <Route path="/edit-hotel/:hotelId" element={<Layout><EditHotel/></Layout>}/>
